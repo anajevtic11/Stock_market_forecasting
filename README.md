@@ -5,7 +5,9 @@
 ## Dataset
 
 Amazon stock market data can be found at:
-Dataset contains 5 years (2/1/14 - 1/31/2019)  of daily prices: `Open`, `High`, `Low`, `Close` and `Adj Close`, as well as `Volume`. In this project we focus on forecasting `Open` prices using time series models.
+Dataset contains 5 years (2/1/14 - 1/31/2019)  of daily prices: `Open`, `High`, `Low`, `Close` and `Adj Close`, as well as `Volume`. In this project we focus on forecasting `Open` prices (depicted below) using time series models.
+
+![Open prices](Figures/Open_prices.jpg)
 
 ## Files
 
