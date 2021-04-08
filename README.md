@@ -19,8 +19,8 @@ We use an ARIMA forecasting model to predict:
 * day ahead stock market prices
 * two days ahead stock market prices
 
-### EDA
-We perform exploratory data analysis (EDA) to check for missing data and outliers, as well as identify necessary model order parameters. To identify outliers, we use a statistical measure - Median Absolute Deviation (MAD), on a rolling window of size 60 to account for non-stationarity of the time series:
+### Exploratory Data Analysis
+We perform exploratory data analysis (EDA) to check for missing data and outliers, as well as identify necessary model order parameters. To identify outliers, we use a statistical measure - **Median Absolute Deviation (MAD)**, on a rolling window of size 60 to account for non-stationarity of the time series:
 <img src="Figures/Open_prices_outlier.JPG" width="750">
 
 Next, we analyze the properties of the `Open` signal to find optimal parameters `p` and `q` for the ARIMA(p,d,q) model.
