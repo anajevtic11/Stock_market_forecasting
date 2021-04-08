@@ -46,7 +46,7 @@ In summary, through the process of EDA, we found no missing data, several outlie
 
 ### Forecasting methods
 
-We implement and compare the performance of:
+We implement and compare the performance of both the ARIMA and the Holts-Winters Simple Exponential Smoothing forecasting models for:
 * **Day ahead forecasting**: stock market prices for the next day is forecasted using an ARIMA model trained on all available historical values.
 * **Two days ahead forecasting**: to predict stock market price at times t+1 and t+2: an ARIMA model is first trained on all values for times [0,t], and price at time t+1 is predicted; then, the predicted value at time t+1 is used to retrain the ARIMA model on values [0,t+1], and price at time t+2 is predicted.
 
@@ -62,3 +62,5 @@ ARIMA (2,2,2) (1-day) | **56.5%** | 40.701
 HW (2-day) | 51% | 53.633
 ARIMA(2,1,2) (2-day) | 51.8% | 54.199
 ARIMA (2,2,2) (2-day) | 50.6% | 53.135
+
+Evidently, the ARIMA(2,2,2) model gives the best performance on forecasting day-ahead stock prices while ARIMA (2,1,2) gives the best performance for predicting two-days-ahead stock prices. The sign accuracy for day-ahead stock prices forecasting is satisfactory while for two-days-ahead is not.
