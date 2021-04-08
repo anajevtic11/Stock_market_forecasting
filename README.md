@@ -4,9 +4,9 @@
 
 ## Dataset
 
-Amazon stock market data can be found at: https://www.kaggle.com/prasoonkottarathil/amazon-stock-price-20142019
+The Amazon stock market data used in this project can be found at: https://www.kaggle.com/prasoonkottarathil/amazon-stock-price-20142019
 
-Dataset contains 5 years (2/1/14 - 1/31/2019)  of daily prices: `Open`, `High`, `Low`, `Close` and `Adj Close`, as well as `Volume`. In this project we focus on forecasting `Open` prices (depicted below) using time series models.
+The dataset contains 5 years (2/1/14 - 1/31/2019)  of daily prices: `Open`, `High`, `Low`, `Close` and `Adj Close`, as well as `Volume`. In this project we focus on forecasting `Open` prices (depicted below) using time series models.
 
 <img src="Figures/Open_prices.jpg" width="750">
 
