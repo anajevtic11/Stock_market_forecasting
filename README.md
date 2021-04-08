@@ -53,9 +53,9 @@ We use a Holts-Winters Simple Exponential Smoothing model as a benchmark in both
 
 Model | Sign accuracy | RMSE
 ----- | --------------| ------
-WH (1-day) | 47.05% | 40.57
-ARIMA(2,1,2) (1-day) | 55.29% | 40.29
-ARIMA (2,2,2) (1-day) | |
-WH (2-day) | 50.98% | 53.451
-ARIMA(2,1,2) (2-day) | 51.37% | 53.57
-ARIMA (2,2,2) (2-day) | |
+HW (1-day) | 55.3% | 40.285
+ARIMA(2,1,2) (1-day) | 54.9% | **40.223**
+ARIMA (2,2,2) (1-day) | **56.5%** | 40.701
+HW (2-day) | 51% | 53.633
+ARIMA(2,1,2) (2-day) | 51.8% | 54.199
+ARIMA (2,2,2) (2-day) | 50.6% | 53.135
