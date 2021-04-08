@@ -18,6 +18,7 @@ The dataset contains 5 years (2/1/14 - 1/31/2019)  of daily prices: `Open`, `Hig
 We develop both an ARIMA and a Holts-Winters Simple Exponential Smoothing forecasting model to predict:
 * **day ahead** stock market prices
 * **two days ahead** stock market prices
+
 Before developing our model, we perform exploratory data analysis (EDA).
 
 ### Exploratory Data Analysis
