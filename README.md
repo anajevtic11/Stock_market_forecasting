@@ -16,8 +16,8 @@ The dataset contains 5 years (2/1/14 - 1/31/2019)  of daily prices: `Open`, `Hig
 
 ## Project description
 We use an ARIMA forecasting model to predict:
-* day ahead stock market prices
-* two days ahead stock market prices
+* **day ahead** stock market prices
+* **two days ahead** stock market prices
 
 ### Exploratory Data Analysis
 We perform exploratory data analysis (EDA) to check for missing data and outliers, as well as identify necessary model order parameters. To identify outliers, we use a statistical measure - **Median Absolute Deviation (MAD)**, on a rolling window of size 60 to account for non-stationarity of the time series:
