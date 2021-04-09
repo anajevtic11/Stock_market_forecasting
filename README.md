@@ -26,9 +26,29 @@ We perform exploratory data analysis (EDA) to check for missing data and outlier
 
 <img src="Figures/Open_prices_outlier.JPG" width="750">
 
-Next, we analyze the properties of the `Open` signal to find optimal parameters `p` and `q` for the ARIMA(p,d,q) model.
+We found and removed 6 outliers in the `Open` signal, and replaced their values via linear interpolation.
 
-First, we plot the autocorrelation function of the `Open` signal to find best parameter value `q` of the Moving Average (MA) portion of the ARIMA model. Order of the MA model is then selected as the largest lag for which the value of the autocorrelation function is above the critical threshold. The critical threshold is defined as:
+#### Seasonal decomposition and checking for stationarity
+
+Next, we analyze the properties of the `Open` signal to find optimal parameters `p`, `d` and `q` for the ARIMA(p,d,q) model. We first perform seasonal decomposition, which revealed clear yearly seasonality and non-stationarity, with an obvious upward trend.
+
+<img src="Figures/seasonal_decomp.JPG" width="750">
+
+We also ran an Augmented Dickey-Fuller (ADF) test which confirmed non-stationarity of the `Open` time series.
+
+<img src="Figures/adf_stats.JPG" width="350">
+
+We remove the trend by differencing the series, and check the statistics again.
+
+<img src="Figures/seasonal_decomp_diff.JPG" width="750">
+
+<img src="Figures/adf_stats_diff.JPG" width="350">
+
+We can see that after differencing, the seasonality was removed, but somewhat of an upward trend remains. However, the ADF test implies that the data is now stationary. From this analysis we conclude that the optimal value of `d` for the ARIMA model is 1.
+
+#### Plot Autocorrelation and Partial autocorrelation functions
+
+We plot the autocorrelation function of the `Open` signal to find best parameter value `q` of the Moving Average (MA) portion of the ARIMA model. Order of the MA model is then selected as the largest lag for which the value of the autocorrelation function is above the critical threshold. The critical threshold is defined as:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=threshold&space;=&space;\frac{2}{\sqrt{n}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?threshold&space;=&space;\frac{2}{\sqrt{n}}" title="threshold = \frac{2}{\sqrt{n}}" /></a>
 
@@ -36,13 +56,13 @@ where `n` is the number of samples in the signal `Open`.
 
 <img src="Figures/autocorr.JPG" width="750">
 
-From the autocorrelation plot, we would conclude that a very high order (~400) MA model is necessary to model the data. However, since the signal is very noisy, we choose a much lower order model (q=2), to prevent overfitting.
+From the autocorrelation plot, we would conclude that order `q`=1 or 2 MA model is suitable to model the data. 
 
 Next, we plot the partial autocorrelation function of the `Open` signal to find best parameter value `p` of the Autoregressive (AR) portion of the ARIMA model. Usually, order of the AR model is selected as the largest value of lag for which the value of the partial autocorrelation function is higher than the critical threshold. In our case, we select p=2.
 
 <img src="Figures/partial_autocorr.JPG" width="750">
 
-In summary, through the process of EDA, we found no missing data, several outliers that were removed, and concluded that the suitable model of `Open` signal is ARIMA(2,d,2). The typical values used for degree of differencing parameter `d` are 1 or 2, since the signal is non-stationary. We test and showcase the performance of our model for both values of parameter `d`.
+In summary, through the process of EDA, we found no missing data, several outliers that were removed, and concluded that the suitable model of `Open` signal is ARIMA(2,1,2).
 
 ### Forecasting methods
 
